@@ -1,0 +1,28 @@
+\section{Question 1}
+
+\begin{question}
+    Research has shown that in a certain language, the distribution of the number of letters in words in texts is close to Poisson with parameter 4. 
+    
+    Use the central limit theorem to approximate the probability that a text of 1000 words has more than 4100 letters. Explain explicitly what assumptions you are making to guarantee that this approximation can be used.
+\end{question}
+
+\begin{answer}
+    We follow the four steps:
+    \begin{enumerate}
+        \item We need to assume that subsequent words are i.i.d., and that their expectation and variance are bounded.
+        
+        \item The lengths of words are Poisson with parameter 4, so that the mean and the variance are 4.
+        
+        \item We are asked to compute the probability that a text of 1000 words has more than 4100 letters: $\mathbb{P}(S_{1000} > 4100)$, where $S_{1000}$ is the number of letters in the text of 1000 words. 
+        
+        We rewrite this as
+        \begin{equation*}
+            \mathbb{P}(S_{1000} > 4100) = \mathbb{P}\left( \frac{S_{1000} - 4100}{\sqrt{1000 \cdot 4}} > \frac{4100 - 4000}{\sqrt{1000 \cdot 4}} \right) \approx \mathbb{P}(Z_{1000} > 1.58112).
+        \end{equation*}
+        
+        \item CLT approximation: We approximate
+        \begin{equation*}
+            \mathbb{P}(S_{1000} > 4100) \approx \mathbb{P}(Z_{1000} > 1.58112) \approx \mathbb{P}(Z > 1.58112) \approx 0.0571.
+        \end{equation*}
+    \end{enumerate}
+\end{answer}

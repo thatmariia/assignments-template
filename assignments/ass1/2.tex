@@ -1,0 +1,36 @@
+\section{Question 2}
+
+\begin{question}
+    An urn contains 2 black and 3 white balls. We repeatedly draw a ball, and replace it with two balls of the same color. We assume that all balls are drawn with equal probability.
+\end{question}
+
+\subsection{2A}
+
+\begin{question}
+    Compute the probability of drawing first a black and then two white balls in the first three draws. Also compute the probability of first drawing two white balls and then the black ball.
+\end{question}
+
+\begin{answer}
+    Write BWW for the sequence of first a black and then two white balls in the first three draws (and similarly with WWB etc). Then 
+    \begin{equation*}
+        \mathbb{P}(BWW) = \mathbb{P}(B) \mathbb{P}(BW | B) \mathbb{P}(BWW | BW) = \frac{2}{5} \frac{3}{6} \frac{4}{7} = \frac{4}{35}.
+    \end{equation*}
+\end{answer}
+
+\subsection{2B}
+
+\begin{question}
+    Compute the probability of drawing a white ball in the first draw. Also compute the probability of drawing a white ball in the first draw conditionally on drawing a black ball in the second draw. Give an interpretation of why these are different.
+\end{question}
+
+\begin{answer}
+    We start by noting that $\mathbb{P}(W) = \frac{3}{5}$. Further, let $B_2$ denote the event that we draw a black ball in the second draw. Then we need to compute the conditional probability $\mathbb{P}(W | B_2)$. We do this by writing
+    \begin{equation*}
+        \mathbb{P}(W | B_2) = \frac{\mathbb{P}(WB)}{\mathbb{P}(B_2)} = \frac{\mathbb{P}(WB)}{\mathbb{P}(WB) + \mathbb{P}(BB)}.
+    \end{equation*}
+    Then we compute
+    \begin{equation*}
+        \mathbb{P}(W | B_2) = \frac{\frac{3}{5} \frac{2}{6}}{\frac{3}{5} \frac{2}{6} + \frac{2}{5} \frac{3}{6}} = \frac{6}{12} = \frac{1}{2}.
+    \end{equation*}
+    This probability is smaller than $\mathbb{P}(W) = \frac{3}{5}$, since drawing the black ball in the second draw makes it more likely that we had drawn a black ball in the first draw.
+\end{answer}
